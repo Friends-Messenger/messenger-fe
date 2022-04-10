@@ -1,10 +1,24 @@
-
 <form [formGroup]="form" (submit)="login()">
-  Login
-  <input formControlName="username"/>
-  <br>
-  Password
-  <input formControlName="password"/>
-  <br>
-  <button type="submit">Log In</button>
+    <label for="login">{{'label.login' | translate}}</label>
+    <input
+        pInputText
+        class="p-inputtext-sm"
+        id="login"
+        [formControlName]="'username'"
+    >
+    <br>
+    <label for="login">{{'label.password' | translate}}</label>
+    <input
+        pInputText
+        class="p-inputtext-sm"
+        id="password"
+        [formControlName]="'password'"
+    >
+    <br>
+    <button
+        pButton
+        class="p-button-sm"
+        [label]="'label.login' | translate"
+        type="submit"
+    ></button>
 </form>
