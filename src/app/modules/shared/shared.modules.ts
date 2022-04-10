@@ -24,49 +24,56 @@ import {SplitButtonModule} from 'primeng/splitbutton';
 import {SpeedDialModule} from 'primeng/speeddial';
 import {TranslateModule} from '@ngx-translate/core';
 import {InputTextModule} from 'primeng/inputtext';
+import {RippleModule} from 'primeng/ripple';
+import {PasswordModule} from 'primeng/password';
+import {TooltipModule} from 'primeng/tooltip';
 
 const PRIME_NG_MODULES = [
-  ButtonModule,
-  TableModule,
-  DialogModule,
-  ConfirmDialogModule,
-  DropdownModule,
-  MenubarModule,
-  ButtonModule,
-  ListboxModule,
-  RadioButtonModule,
-  PanelModule,
-  AccordionModule,
-  CalendarModule,
-  TabViewModule,
-  FocusTrapModule,
-  CheckboxModule,
-  TreeTableModule,
-  TreeModule,
-  MenuModule,
-  MegaMenuModule,
-  SplitButtonModule,
-  SpeedDialModule,
-  InputTextModule
+    ButtonModule,
+    TableModule,
+    DialogModule,
+    ConfirmDialogModule,
+    DropdownModule,
+    MenubarModule,
+    ButtonModule,
+    ListboxModule,
+    RadioButtonModule,
+    PanelModule,
+    AccordionModule,
+    CalendarModule,
+    TabViewModule,
+    FocusTrapModule,
+    CheckboxModule,
+    TreeTableModule,
+    TreeModule,
+    MenuModule,
+    MegaMenuModule,
+    SplitButtonModule,
+    SpeedDialModule,
+    InputTextModule,
+    RippleModule,
+    PasswordModule,
+    TooltipModule
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    PRIME_NG_MODULES,
-    TranslateModule,
-  ],
-  exports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    PRIME_NG_MODULES,
-    TranslateModule,
-  ],
-  declarations: []
+    imports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        PRIME_NG_MODULES,
+        TranslateModule,
+    ],
+    exports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        PRIME_NG_MODULES,
+        TranslateModule,
+    ],
+    declarations: []
 })
-export class SharedModules {}
+export class SharedModules {
+}

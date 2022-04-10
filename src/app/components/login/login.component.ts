@@ -1,40 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from 'src/app/auth/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['login.component.less']
+    selector: 'fm-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['login.component.less']
 })
 export class LoginComponent implements OnInit {
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router
-  ) {
-    // TODO: implement validators
-    this.form = fb.group({
-      username: [''],
-      password: [''],
-    });
-  }
+    constructor(
+        private fb: FormBuilder,
+        private authService: AuthService,
+        private router: Router
+    ) {
+        // TODO: implement validators
+        this.form = fb.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required],
+        });
+    }
 
-  public form: FormGroup;
+    public form: FormGroup;
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  login(): void {
-    console.log(this.form.value);
-    this.authService.logIn(this.form.value)
-      .subscribe((data) => {
-        console.log(data);
-        this.authService.setToken(data);
-        this.router.navigate(['profile']);
-      });
-  }
+    login(): void {
+        console.log(this.form.value);
+        this.authService.logIn(this.form.value)
+            .subscribe((data) => {
+                console.log(data);
+                this.authService.setToken(data);
+                this.router.navigate(['profile']);
+            });
+    }
 
 }
