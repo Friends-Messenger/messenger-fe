@@ -23,6 +23,7 @@ import {MegaMenuModule} from 'primeng/megamenu';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {SpeedDialModule} from 'primeng/speeddial';
 import {TranslateModule} from '@ngx-translate/core';
+import {InputTextModule} from 'primeng/inputtext';
 
 const PRIME_NG_MODULES = [
   ButtonModule,
@@ -46,6 +47,7 @@ const PRIME_NG_MODULES = [
   MegaMenuModule,
   SplitButtonModule,
   SpeedDialModule,
+  InputTextModule
 ];
 
 @NgModule({
