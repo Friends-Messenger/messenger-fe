@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ObservedValueOf } from 'rxjs';
-import { Credentials } from '../modules/credentials.model';
+import { Credentials } from '../models/credentials.model';
 import { environment } from '../../environments/environment';
 
 export interface Token {

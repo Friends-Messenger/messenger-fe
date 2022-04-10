@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'profile',  loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 @NgModule({
