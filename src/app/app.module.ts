@@ -8,6 +8,9 @@ import {SharedModules} from './modules/shared/shared.modules';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {LocalStorageService} from './services/local-storage.service';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   const hash = window.location.hash || '';
@@ -18,12 +21,21 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   );
 }
 
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'profile',  loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)},
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
     HttpClientModule,
     SharedModules,
     TranslateModule.forRoot({

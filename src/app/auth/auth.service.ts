@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ObservedValueOf } from 'rxjs';
-import { Credentials } from '../modules/credentials.model';
+import { Credentials } from '../models/credentials.model';
 import { environment } from '../../environments/environment';
 
 export interface Token {
@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   // TODO: delete
-  public test(): Observable<any> {
+  public userProfile(): Observable<any> {
     return this.http.get(`${this.env}auth/profile`);
   }
 }

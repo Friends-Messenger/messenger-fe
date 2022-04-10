@@ -24,24 +24,7 @@ export class AppComponent {
   this.translateService.use(currentLanguage);
   }
 
-  username = 'john';
-  password = 'changeme';
-
-  login(): void {
-    this.authService.logIn({ username: this.username, password: this.password })
-      .subscribe((data) => {
-        console.log(data);
-        this.authService.setToken(data);
-      });
-  }
-
-  // TODO: delete
-  getData(): void {
-    this.authService.test().subscribe((data) => {
-      console.log('Response from server', data);
-    });
-  }
-
+  // TODO
   logOut(): void {
     this.authService.logOut();
   }
