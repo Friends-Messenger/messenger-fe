@@ -1,24 +1,44 @@
-<form [formGroup]="form" (submit)="login()">
-    <label for="login">{{'label.login' | translate}}</label>
-    <input
-        pInputText
-        class="p-inputtext-sm"
-        id="login"
-        [formControlName]="'username'"
-    >
-    <br>
-    <label for="login">{{'label.password' | translate}}</label>
-    <input
-        pInputText
-        class="p-inputtext-sm"
-        id="password"
-        [formControlName]="'password'"
-    >
-    <br>
-    <button
-        pButton
-        class="p-button-sm"
-        [label]="'label.login' | translate"
-        type="submit"
-    ></button>
-</form>
+<div class="login">
+    <div class="login__card">
+        <h1>{{'label.login' | translate}}</h1>
+        <form [formGroup]="form" (submit)="login()">
+            <div class="login__card__input">
+                <input
+                    pInputText
+                    class="p-inputtext-sm"
+                    [pTooltip]="
+                    form.controls['username'].invalid &&
+                    form.controls['username'].dirty ?
+                    ('label.enter.login' | translate) :
+                     null"
+                    [formControlName]="'username'"
+                    [placeholder]="'label.login' | translate"
+                >
+            </div>
+            <div class="login__card__input">
+                <input
+                    pInputText
+                    class="p-inputtext-sm"
+                    [pTooltip]="form.controls['password'].invalid &&
+                    form.controls['password'].dirty ?
+                    ('label.enter.password' | translate) :
+                    null"
+                    [formControlName]="'password'"
+                    [placeholder]="'label.password' | translate"
+                >
+            </div>
+            <div class="login__card__input">
+                <button
+                    pButton
+                    pRipple
+                    type="submit"
+                    [label]="'label.login' | translate"
+                    [disabled]="form.invalid"
+                ></button>
+            </div>
+            <a href="#" class="login__card-forget">
+                <span>{{'label.lost.password' | translate}}</span>
+            </a>
+        </form>
+    </div>
+</div>

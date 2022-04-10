@@ -6,6 +6,7 @@ import {Constants} from './utils/constants';
 import {defaultLang} from './utils/locale.list.constants';
 
 @Component({
+    // tslint:disable-next-line:component-selector
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']

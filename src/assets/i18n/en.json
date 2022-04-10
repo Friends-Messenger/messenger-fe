@@ -1,5 +1,8 @@
 {
   "label.login": "Login",
   "label.logout": "Log out",
-  "label.password": "Password"
+  "label.password": "Password",
+  "label.lost.password": "Lost your password?",
+  "label.enter.login": "Login is required",
+  "label.enter.password": "Password is required"
 }
