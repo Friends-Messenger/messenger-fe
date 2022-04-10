@@ -9,24 +9,7 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent {
   constructor(private authService: AuthService) {}
 
-  username = 'john';
-  password = 'changeme';
-
-  login(): void {
-    this.authService.logIn({ username: this.username, password: this.password })
-      .subscribe((data) => {
-        console.log(data);
-        this.authService.setToken(data);
-      });
-  }
-
-  // TODO: delete
-  getData(): void {
-    this.authService.test().subscribe((data) => {
-      console.log('Response from server', data);
-    });
-  }
-
+  // TODO
   logOut(): void {
     this.authService.logOut();
   }
