@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   // TODO: delete
-  public test(): Observable<any> {
+  public userProfile(): Observable<any> {
     return this.http.get(`${this.env}auth/profile`);
   }
 }
