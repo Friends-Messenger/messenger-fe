@@ -19,6 +19,7 @@
                 <input
                     pInputText
                     class="p-inputtext-sm"
+                    type="password"
                     [pTooltip]="form.controls['password'].invalid &&
                     form.controls['password'].dirty ?
                     ('label.enter.password' | translate) :
@@ -33,6 +34,7 @@
                     pRipple
                     type="submit"
                     [label]="'label.login' | translate"
+                    [loading]="loading"
                     [disabled]="form.invalid"
                 ></button>
             </div>
@@ -42,3 +44,8 @@
         </form>
     </div>
 </div>
+
+<p-toast
+    [showTransitionOptions]="'200ms'"
+    [hideTransitionOptions]="'200ms'"
+></p-toast>

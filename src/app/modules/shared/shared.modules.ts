@@ -27,6 +27,9 @@ import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
 import {PasswordModule} from 'primeng/password';
 import {TooltipModule} from 'primeng/tooltip';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {ToastModule} from 'primeng/toast';
 
 const PRIME_NG_MODULES = [
     ButtonModule,
@@ -53,7 +56,10 @@ const PRIME_NG_MODULES = [
     InputTextModule,
     RippleModule,
     PasswordModule,
-    TooltipModule
+    TooltipModule,
+    MessagesModule,
+    MessageModule,
+    ToastModule
 ];
 
 @NgModule({
