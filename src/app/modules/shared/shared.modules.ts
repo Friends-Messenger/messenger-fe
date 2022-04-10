@@ -30,6 +30,7 @@ import {TooltipModule} from 'primeng/tooltip';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {ToastModule} from 'primeng/toast';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const PRIME_NG_MODULES = [
     ButtonModule,
@@ -68,6 +69,7 @@ const PRIME_NG_MODULES = [
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
+        FontAwesomeModule,
         PRIME_NG_MODULES,
         TranslateModule,
     ],
@@ -76,6 +78,7 @@ const PRIME_NG_MODULES = [
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
+        FontAwesomeModule,
         PRIME_NG_MODULES,
         TranslateModule,
     ],
