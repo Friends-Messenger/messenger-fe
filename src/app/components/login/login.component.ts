@@ -28,8 +28,11 @@ export class LoginComponent implements OnInit {
     }
 
     login(): void {
-        console.log(this.form.value);
-        this.authService.logIn(this.form.value)
+        const credentials = {
+            username: this.form.value.username.trim(),
+            password: this.form.value.password.trim()
+        };
+        this.authService.logIn(credentials)
             .subscribe((data) => {
                 console.log(data);
                 this.authService.setToken(data);
