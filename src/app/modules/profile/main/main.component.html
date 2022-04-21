@@ -1,5 +1,30 @@
-<fa-icon [icon]="faCoffee" [spin]="isSyncAnimated" (click)="isSyncAnimated=!isSyncAnimated"></fa-icon>
+<div class="main-columns">
+    <!--todo
+            it is possible to break this layout into different components,
+            it will be better, how much the component will be very large,
+            and you can already start a separate task for each block
+            (layout styles at least)
+    -->
+    <div class="sidebar-left">
+        <div class="sidebar-header">
+            <div class="sidebar-header__burger-container"></div>
+            <div class="input-search"></div>
+        </div>
+        <div class="sidebar-content">
+        </div>
+    </div>
 
-<br>
+    <div class="main-column" *ngIf="currentChat; else noChatChoose">
 
-Hello {{ user | async | uppercase }}
+        <div class="main-column__info-panel">
+            Hello {{ user | async | uppercase }}
+        </div>
+        <div class="main-column__content"></div>
+        <div class="main-column__footer"></div>
+    </div>
+
+</div>
+
+<ng-template #noChatChoose>
+    <div>EMPTY BACKGROUND</div>
+</ng-template>
